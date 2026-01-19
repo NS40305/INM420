@@ -1,0 +1,448 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>inm420 - grid page</title>
+
+    <!-- bootstrap 5 (cdn) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- bootstrap icons (cdn) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- your css -->
+    <link rel="stylesheet" href="./css/styles.css" />
+</head>
+
+<body>
+    <!-- Header & Navigation -->
+    <header class="sticky-top bg-white border-bottom">
+        <nav class="navbar navbar-expand-lg bg-white">
+            <div class="container d-flex align-items-center">
+                <!-- Hamburger toggle -->
+                <button class="navbar-toggler border-0 d-lg-none" type="button" aria-controls="mainnav"
+                    aria-expanded="false" aria-label="toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Brand -->
+                <a class="navbar-brand d-flex align-items-center gap-2 fw-bold ms-2 ms-lg-0" href="#">
+                    <span class="brand-mark d-none d-lg-inline" aria-hidden="true">
+                        <img src="./assets/icons/icon-layout.svg" alt="logo" />
+                    </span>
+                    <span>Grid</span>
+                </a>
+
+                <!-- Sign In button -->
+                <a class="btn btn-primary rounded-pill px-4 fw-bold order-lg-3 ms-auto" href="#">Sign In</a>
+
+                <!-- Collapsible menu -->
+                <div class="collapse navbar-collapse order-lg-2" id="mainnav">
+                    <ul class="navbar-nav mx-auto mb-2 mb-lg-0 fw-semibold nav-muted">
+                        <li class="nav-item"><a class="nav-link active" href="#how" aria-current="page">How it works</a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="#who">Who we are</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#what">What we do</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contact">Contact us</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section py-5" id="how">
+            <div class="container">
+                <div class="row align-items-center g-5">
+                    <!-- left copy -->
+                    <div class="text-center mx-auto mb-5" style="max-width: 800px;">
+                        <h1 class="display-3 fw-black lh-1 mb-2 text-dark">
+                            Combine <span class="hero-accent">fine</span> images
+                        </h1>
+                        <h2 class="display-6 fw-black lh-1 mb-2 text-dark">
+                            To represent a product
+                        </h2>
+                    </div>
+
+                    <div class="d-flex justify-content-center">
+                        <div class="collage-grid">
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="collage-grid">
+                    <div class="grid-helper-text">
+                        Use mixed grid with imagery,<br>
+                        replace with your own photos<br>
+                        and descriptions
+                    </div>
+                    <article class="tile tile-a">
+                        <div class="tile-content">
+                            <p class="mb-2 fw-bold fs-5">We aimed to deliver HQ templates for Figma</p>
+                            <p class="text-white-50 small">Used by 123 people</p>
+                        </div>
+                    </article>
+                    <a href="#what" class="grid-btn-learn">
+                        Learn more
+                    </a>
+                    <article class="tile tile-b">
+                        <p class="tile-text tile-text-bottom">consider it done!</p>
+                    </article>
+
+                    <div class="grid-desc-text">
+                        This is multipurpose grid, it fits for portfolio, services or agency web site
+                    </div>
+
+                    <article class="tile tile-c"></article>
+
+                    <article class="tile tile-d"></article>
+
+                    <article class="tile tile-e"></article>
+
+                    <article class="tile tile-f">
+                        <p class="tile-text tile-text-top">see my goal?</p>
+                    </article>
+
+                    <article class="tile tile-g"></article>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="py-5" id="what">
+            <div class="container">
+                <div class="mb-5" style="max-width: 900px;">
+                    <h2 class="fw-black mb-3 text-dark text-start">Delivering good designs since 1954 <img class="emoji"
+                            src="https://abs.twimg.com/emoji/v2/72x72/1f69a.png"> <img class="emoji"
+                            src="https://abs.twimg.com/emoji/v2/72x72/1f4a8.png"></h2>
+                    <p class="text-muted fs-5 text-start" style="max-width: 700px;">
+                        we’re the first multi-purpose design kit solutions for businesses. we help you bridge gaps
+                        between your layouts, templates and developers to empower all involved.
+                    </p>
+                </div>
+
+                <div class="row g-4">
+                    <!-- support -->
+                    <div class="col-6 col-md-6 col-lg-3">
+                        <article class="feature-card h-100">
+                            <div class="icon-bubble bubble-pink mb-3">
+                                <img src="./assets/icons/icon-support.svg" alt="support icon" class="feature-icon" />
+                            </div>
+                            <h3 class="h5 fw-bold">Support</h3>
+                            <p class="text-muted small">
+                                Delivering faster and more personalized support with shared screens and cool design
+                                systems for Figma
+                            </p>
+                            <a class="btn-learn-more" href="#">Learn more</a>
+                        </article>
+                    </div>
+
+                    <!-- sales growth -->
+                    <div class="col-6 col-md-6 col-lg-3">
+                        <article class="feature-card h-100">
+                            <div class="icon-bubble bubble-blue mb-3">
+                                <img src="./assets/icons/icon-sales.svg" alt="sales growth icon" class="feature-icon" />
+                            </div>
+                            <h3 class="h5 fw-bold">Sales growth</h3>
+                            <p class="text-muted small">
+                                Identify qualified customers with easy-to use live chat messaging and AI-based Sales
+                                Bot
+                            </p>
+                            <a class="btn-learn-more" href="#">Learn more</a>
+                        </article>
+                    </div>
+
+                    <!-- components-driven -->
+                    <div class="col-6 col-md-6 col-lg-3">
+                        <article class="feature-card h-100">
+                            <div class="icon-bubble bubble-purple mb-3">
+                                <img src="./assets/icons/icon-components.svg" alt="components-driven icon"
+                                    class="feature-icon" />
+                            </div>
+                            <h3 class="h5 fw-bold">Coponents-driven</h3>
+                            <p class="text-muted small">
+                                Delivering faster and more personalized support with shared screens and cool design
+                                systems for Figma
+                            </p>
+                            <a class="btn-learn-more" href="#">Learn more</a>
+                        </article>
+                    </div>
+
+                    <!-- swap the icon -->
+                    <div class="col-6 col-md-6 col-lg-3">
+                        <article class="feature-card h-100">
+                            <div class="icon-bubble bubble-teal mb-3">
+                                <img src="./assets/icons/icon-swap.svg" alt="swap icon" class="feature-icon" />
+                            </div>
+                            <h3 class="h5 fw-bold">Swap the icon</h3>
+                            <p class="text-muted small">
+                                You can toggle to any icon within Instances and customize outlined stroke to more bolder
+                                or lighter
+                            </p>
+                            <a class="btn-learn-more" href="#">Learn more</a>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section class="py-5">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="display-6 fw-black">Affordable pricing</h2>
+                    <p class="text-muted mb-0">
+                        Bill me <span class="text-primary fw-bold text-decoration-underline">Monthly</span> • Yearly
+                    </p>
+                </div>
+
+                <div class="row g-4 align-items-stretch">
+                    <!-- free -->
+                    <div class="col-12 col-lg-4">
+                        <article class="price-card h-100 p-4">
+                            <p class="text-primary fw-bold mb-2">Free</p>
+                            <div class="d-flex align-items-end gap-2 mb-4">
+                                <h3 class="display-6 fw-black mb-0">Free</h3>
+                                <span class="text-muted small">/ Forever</span>
+                            </div>
+
+                            <ul class="list-unstyled text-muted small d-grid gap-2 mb-4">
+                                <li class="price-item">
+                                    <span class="check-wrapper check-bg-gray">
+                                        <img src="./assets/icons/check.svg" alt="check" class="check-icon" />
+                                    </span>
+                                    Components-driven system
+                                </li>
+                                <li class="price-item">
+                                    <span class="check-wrapper check-bg-gray">
+                                        <img src="./assets/icons/check.svg" alt="check" class="check-icon" />
+                                    </span>
+                                    Sales-boosting landing pages
+                                </li>
+                                <li class="price-item">
+                                    <span class="check-wrapper">
+                                        <img src="./assets/icons/check.svg" alt="check" class="check-icon" />
+                                    </span>
+                                    Awesome feather icons pack
+                                </li>
+                            </ul>
+
+                            <a class="btn btn-outline-primary rounded-pill w-100 fw-bold" href="#">
+                                Try for free
+                            </a>
+                        </article>
+                    </div>
+
+                    <!-- individual -->
+                    <div class="col-12 col-lg-4">
+                        <article class="price-card price-card-featured h-100 p-4 position-relative">
+                            <span class="badge rounded-pill text-bg-light border price-pill">Best!</span>
+
+                            <p class="text-primary fw-bold mb-2"><img class="emoji"
+                                    src="https://abs.twimg.com/emoji/v2/72x72/1f464.png"> Individual</p>
+                            <div class="d-flex align-items-end gap-2 mb-4">
+                                <h3 class="display-6 fw-black mb-0">$24</h3>
+                                <span class="text-muted small">/ Month</span>
+                            </div>
+
+                            <ul class="list-unstyled text-muted small d-grid gap-2 mb-4">
+                                <li class="price-item">
+                                    <span class="check-wrapper check-bg-yellow">
+                                        <img src="./assets/icons/check.svg" alt="check" class="check-icon" />
+                                    </span>
+                                    Components-driven system
+                                </li>
+                                <li class="price-item">
+                                    <span class="check-wrapper check-bg-yellow">
+                                        <img src="./assets/icons/check.svg" alt="check" class="check-icon" />
+                                    </span>
+                                    Sales-boosting landing pages
+                                </li>
+                                <li class="price-item">
+                                    <span class="check-wrapper check-bg-yellow">
+                                        <img src="./assets/icons/check.svg" alt="check" class="check-icon" />
+                                    </span>
+                                    Awesome feather icons pack
+                                </li>
+                                <li class="price-item">
+                                    <span class="check-wrapper check-bg-yellow">
+                                        <img src="./assets/icons/check.svg" alt="check" class="check-icon" />
+                                    </span>
+                                    Themed into 3 different styles
+                                </li>
+                                <li class="price-item">
+                                    <span class="check-wrapper check-bg-yellow">
+                                        <img src="./assets/icons/check.svg" alt="check" class="check-icon" />
+                                    </span>
+                                    Will help to learn Figma
+                                </li>
+                            </ul>
+
+                            <a class="btn btn-primary rounded-pill w-100 fw-bold" href="#">
+                                Regular license
+                            </a>
+                        </article>
+                    </div>
+
+                    <!-- corporate -->
+                    <div class="col-12 col-lg-4">
+                        <article class="price-card h-100 p-4 position-relative">
+
+
+                            <p class="text-primary fw-bold mb-2"><img class="emoji"
+                                    src="https://abs.twimg.com/emoji/v2/72x72/1f465.png"> Corporate</p>
+                            <div class="d-flex align-items-end gap-2 mb-4">
+                                <h3 class="display-6 fw-black mb-0">$12</h3>
+                                <span class="text-muted small">/ Editor</span>
+                            </div>
+
+                            <ul class="list-unstyled text-muted small d-grid gap-2 mb-4">
+                                <li class="price-item">
+                                    <span class="check-wrapper check-bg-teal">
+                                        <img src="./assets/icons/check.svg" alt="check" class="check-icon" />
+                                    </span>
+                                    Components-driven system
+                                </li>
+                                <li class="price-item">
+                                    <span class="check-wrapper check-bg-teal">
+                                        <img src="./assets/icons/check.svg" alt="check" class="check-icon" />
+                                    </span>
+                                    Sales-boosting landing pages
+                                </li>
+                                <li class="price-item">
+                                    <span class="check-wrapper check-bg-teal">
+                                        <img src="./assets/icons/check.svg" alt="check" class="check-icon" />
+                                    </span>
+                                    Awesome feather icons pack
+                                </li>
+                                <li class="price-item">
+                                    <span class="check-wrapper check-bg-teal">
+                                        <img src="./assets/icons/check.svg" alt="check" class="check-icon" />
+                                    </span>
+                                    Themed into 3 different styles
+                                </li>
+                            </ul>
+
+                            <a class="btn btn-outline-primary rounded-pill w-100 fw-bold" href="#">
+                                Extended license
+                            </a>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer-wrap py-5" id="contact">
+        <div class="container">
+            <div class="row g-5 align-items-start">
+                <!-- Left Column -->
+                <div class="col-12 col-lg-6">
+                    <div class="mb-5">
+                        <p class="footer-label">Follow us</p>
+                        <div class="social-icons-row">
+                            <a href="#" class="social-icon-link">
+                                <span class="social-fb-circle">
+                                    <i class="bi bi-facebook"></i>
+                                </span>
+                            </a>
+                            <a href="#" class="social-icon-link">
+                                <i class="bi bi-linkedin"></i>
+                            </a>
+                            <a href="#" class="social-icon-link">
+                                <i class="bi bi-slack"></i>
+                            </a>
+                            <a href="#" class="social-icon-link">
+                                <i class="bi bi-twitter"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div>
+                        <p class="footer-label">Information</p>
+                        <div class="footer-info-grid">
+                            <a href="#" class="footer-info-link">About Faster app</a>
+                            <a href="#" class="footer-info-link active-hover">Onhovered / Active</a>
+                            <a href="#" class="footer-info-link">We are hiring!</a>
+                            <a href="#" class="footer-info-link">Get in Touch</a>
+                            <a href="#" class="footer-info-link">Privacy Policy</a>
+                            <a href="#" class="footer-info-link">Resources</a>
+                            <a href="#" class="footer-info-link">Things We Like</a>
+                            <a href="#" class="footer-info-link">Terms of Service</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column -->
+                <div class="col-12 col-lg-6">
+                    <div class="mb-5">
+                        <p class="footer-label">Follow us</p>
+                        <a href="mailto:hello@fasterapp.com" class="footer-email-large">hello@fasterapp.com</a>
+                    </div>
+
+                    <div>
+                        <p class="footer-label">Keep in touch</p>
+                        <form class="contact-form-custom">
+                            <div class="input-row">
+                                <div class="input-wrapper">
+                                    <input type="text" class="form-control" placeholder="Your name">
+                                    <i class="bi bi-person input-icon"></i>
+                                </div>
+                                <div class="input-wrapper">
+                                    <input type="email" class="form-control" placeholder="E-mail">
+                                    <i class="bi bi-envelope input-icon"></i>
+                                </div>
+                            </div>
+                            <div class="message-row">
+                                <div class="textarea-wrapper">
+                                    <textarea class="form-control" placeholder="Leave your message"></textarea>
+                                    <i class="bi bi-pencil-square textarea-icon"></i>
+                                </div>
+                                <div class="btn-send-wrap">
+                                    <button type="submit" class="btn btn-send">SEND</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Footer -->
+    <footer class="footer-mobile d-lg-none">
+        <div class="container text-center">
+            <p class="mb-1 fw-semibold">Copyright © 2018 • Your Company</p>
+            <p class="mb-3">All rights reserved</p>
+            <p class="mb-1 footer-mobile-link">Made in Setproduct.com</p>
+            <p class="mb-4 footer-mobile-link">One man digital agency</p>
+            <a href="mailto:hello@setproduct.com" class="footer-mobile-email">hello@setproduct.com</a>
+            <div class="footer-mobile-social mt-4">
+                <a href="#"><i class="bi bi-facebook"></i></a>
+                <a href="#"><i class="bi bi-linkedin"></i></a>
+                <a href="#"><i class="bi bi-slack"></i></a>
+                <a href="#"><i class="bi bi-twitter"></i></a>
+                <a href="#"><i class="bi bi-youtube"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Wave Decoration -->
+    <div class="wave-decoration">
+        <img src="./images/Wave.png" alt="Wave decoration" class="wave-img">
+    </div>
+
+    <!-- bootstrap js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="./JS/Buger.js"></script>
+</body>
+
+</html>
