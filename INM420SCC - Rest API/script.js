@@ -119,22 +119,18 @@ function updateUI(data, worldTime) {
     cityNameEl.textContent = `${location.name}, ${location.country}`;
 
     let displayTime;
-    let timeForTheme;
 
     if (worldTime && worldTime.datetime) {
-        const dateObj = new Date(worldTime.datetime);
-        const hours = String(dateObj.getHours()).padStart(2, '0');
-        const minutes = String(dateObj.getMinutes()).padStart(2, '0');
-        const year = dateObj.getFullYear();
-        const month = String(dateObj.getMonth() + 1).padStart(2, '0');
-        const day = String(dateObj.getDate()).padStart(2, '0');
+        const datetimePart = worldTime.datetime.split('T');
+        const datePart = datetimePart[0];
+        const timePart = datetimePart[1].split('.')[0];
+        const hours = timePart.split(':')[0];
+        const minutes = timePart.split(':')[1];
 
-        displayTime = `${year}-${month}-${day} ${hours}:${minutes}`;
-        timeForTheme = displayTime;
+        displayTime = `${datePart} ${hours}:${minutes}`;
         console.log('[UI] Using WorldTimeAPI time:', displayTime);
     } else {
         displayTime = location.localtime;
-        timeForTheme = location.localtime;
         console.log('[UI] Fallback to WeatherAPI time:', displayTime);
     }
 
@@ -152,20 +148,20 @@ function updateUI(data, worldTime) {
     weatherIconEl.alt = current.condition.text;
     weatherIconEl.classList.remove('hidden');
 
-    applyWeatherTheme(current.condition.text, current.is_day, timeForTheme);
+    applyWeatherTheme(current.condition.text, current.is_day, worldTime);
 }
 
 /* ================================================
    Theme Functions
    ================================================ */
-function applyWeatherTheme(conditionText, isDay, localtime) {
+function applyWeatherTheme(conditionText, isDay, worldTime) {
     const condition = conditionText.toLowerCase();
 
     document.body.className = '';
     clearWeatherAnimations();
 
-    if (localtime) {
-        applyTimeBrightness(localtime);
+    if (worldTime) {
+        applyTimeBrightness(worldTime);
     }
 
     if (condition.includes('rain') || condition.includes('drizzle') || condition.includes('shower')) {
@@ -196,11 +192,17 @@ function applyWeatherTheme(conditionText, isDay, localtime) {
     }
 }
 
-function applyTimeBrightness(localtime) {
-    const timePart = localtime.split(' ')[1];
+function applyTimeBrightness(worldTime) {
+    if (!worldTime || !worldTime.datetime) {
+        console.warn('[Time] No WorldTimeAPI data available');
+        return;
+    }
+
+    // Parse hour directly from ISO string to preserve city's timezone
+    const timePart = worldTime.datetime.split('T')[1];
     const hour = parseInt(timePart.split(':')[0], 10);
 
-    console.log(`[Time] Local hour: ${hour}`);
+    console.log(`[Time] WorldTimeAPI hour: ${hour}`);
 
     if (hour >= 5 && hour < 7) {
         document.body.classList.add('time-dawn');
@@ -223,7 +225,7 @@ function applyTimeBrightness(localtime) {
 /* ================================================
    Animation Functions
    ================================================ */
-   
+
 // Clear - Remove all animation elements
 function clearWeatherAnimations() {
     if (weatherAnimationEl) {
