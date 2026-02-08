@@ -181,7 +181,6 @@ function applyWeatherTheme(conditionText, isDay, worldTime) {
     } else if (condition.includes('sunny') || condition.includes('clear')) {
         if (isDay === 1) {
             document.body.classList.add('theme-sunny');
-            createSunAnimation();
         } else {
             document.body.classList.add('theme-night');
         }
@@ -283,19 +282,6 @@ function createCloudAnimation() {
     }
 }
 
-// Sunny / Clear - Radiating sun rays
-function createSunAnimation() {
-    const numberOfRays = 12;
-
-    for (let i = 0; i < numberOfRays; i++) {
-        const ray = document.createElement('div');
-        ray.className = 'sun-ray';
-        ray.style.transform = `rotate(${i * (360 / numberOfRays)}deg)`;
-        ray.style.animationDelay = `${i * 0.2}s`;
-        weatherAnimationEl.appendChild(ray);
-    }
-}
-
 /* ================================================
    Test Animation Functions
    ================================================ */
@@ -314,7 +300,6 @@ function applyTestAnimation(type) {
     switch (type) {
         case 'sunny':
             document.body.classList.add('theme-sunny');
-            createSunAnimation();
             break;
         case 'cloudy':
             document.body.classList.add('theme-cloudy');
