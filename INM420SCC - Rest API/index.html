@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Current Weather</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="background-overlay"></div>
+
+    <!-- Weather Animation Container -->
+    <div id="weather-animation" class="weather-animation">
+        <!-- Rain drops will be dynamically added here -->
+    </div>
+
+    <main class="weather-card">
+        <header>
+            <h1>Current Weather</h1>
+        </header>
+
+        <section class="controls">
+            <label for="location-select" class="visually-hidden">Select Location</label>
+            <select id="location-select" name="location">
+                <option value="Toronto">Toronto</option>
+                <option value="Vancouver">Vancouver</option>
+                <option value="New York">New York</option>
+                <option value="London">London</option>
+                <option value="Tokyo">Tokyo</option>
+                <option value="Sydney">Sydney</option>
+                <!-- Animation Test Options -->
+                <option disabled>── Test Animations ──</option>
+                <option value="TEST:sunny">Test Sunny</option>
+                <option value="TEST:cloudy">Test Cloudy</option>
+                <option value="TEST:rainy">Test Rainy</option>
+                <option value="TEST:snowy">Test Snowy</option>
+                <option value="TEST:stormy">Test Stormy</option>
+                <option value="TEST:night">Test Night</option>
+                <option value="TEST:foggy">Test Foggy</option>
+            </select>
+        </section>
+
+        <section id="weather-display" class="weather-info">
+            <div class="location-header">
+                <h2 id="city-name">Loading...</h2>
+                <p id="local-time" class="subtitle"></p>
+            </div>
+
+            <div class="weather-main">
+                <img id="weather-icon" src="" alt="Weather Icon" class="hidden">
+                <p id="temperature" class="temperature">--°C</p>
+            </div>
+
+            <p id="condition" class="condition-text">Select a city to view weather</p>
+
+            <div class="weather-details">
+                <div class="detail-item">
+                    <span class="label">Humidity</span>
+                    <span id="humidity" class="value">--%</span>
+                </div>
+                <div class="detail-item">
+                    <span class="label">Wind</span>
+                    <span id="wind" class="value">-- km/h</span>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>Powered by <a href="https://www.weatherapi.com/" title="Free Weather API">WeatherAPI.com</a></p>
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

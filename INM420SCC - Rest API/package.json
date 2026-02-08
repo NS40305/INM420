@@ -1,0 +1,13 @@
+{
+  "name": "inm420scc---rest-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "start": "lite-server"
+  },
+  "keywords": [],
+  "author": "Chun-Ting Liu",
+  "license": "ISC",
+  "type": "commonjs"
+}
