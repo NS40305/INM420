@@ -337,16 +337,20 @@ document.addEventListener('DOMContentLoaded', function () {
                     }
                 }
 
-                // Make sure it updates on window resize
+                // Make sure it updates on window resize (debounced for performance)
+                var resizeTimer;
                 window.addEventListener('resize', function () {
-                    var currentHash = window.location.hash.replace('#', '') || 'hero';
-                    if (navbar) {
-                        if (window.innerWidth < 1024 || currentHash !== 'hero') {
-                            navbar.classList.add('scrolled');
-                        } else {
-                            navbar.classList.remove('scrolled');
+                    clearTimeout(resizeTimer);
+                    resizeTimer = setTimeout(function () {
+                        var currentHash = window.location.hash.replace('#', '') || 'hero';
+                        if (navbar) {
+                            if (window.innerWidth < 1024 || currentHash !== 'hero') {
+                                navbar.classList.add('scrolled');
+                            } else {
+                                navbar.classList.remove('scrolled');
+                            }
                         }
-                    }
+                    }, 150);
                 });
             }
         });
