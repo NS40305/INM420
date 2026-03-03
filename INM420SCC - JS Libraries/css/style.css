@@ -949,6 +949,8 @@ section {
   .stats__grid {
     grid-template-columns: repeat(2, 1fr);
   }
+  
+  .chart-card { display: block; }
 
   .stats__counters {
     grid-template-columns: repeat(4, 1fr);
