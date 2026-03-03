@@ -1,0 +1,11 @@
+{
+  "name": "horizons-travel",
+  "version": "1.0.0",
+  "description": "INM420 JS Libraries Assignment — Horizons Travel Website",
+  "scripts": {
+    "dev": "lite-server"
+  },
+  "devDependencies": {
+    "lite-server": "^2.6.1"
+  }
+}

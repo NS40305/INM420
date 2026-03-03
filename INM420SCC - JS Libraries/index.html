@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Horizons Travel — Discover handcrafted luxury journeys to the world's most breathtaking destinations." />
+    <title>Horizons Travel | Luxury Journeys Await</title>
+
+    <!-- Favicon -->
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✈️</text></svg>" />
+
+    <!-- AOS (Animate On Scroll) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+
+    <!-- Glide.js -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.6.2/dist/css/glide.core.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.6.2/dist/css/glide.theme.min.css" />
+
+    <!-- Leaflet -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.min.css" />
+
+    <!-- Lightbox2 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightbox2@2.11.4/dist/css/lightbox.min.css" />
+
+    <!-- fullPage.js -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullpage.js@3.1.2/dist/fullpage.min.css" />
+
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+
+    <!-- ════════════════════════════════════════════
+       NAVIGATION
+  ════════════════════════════════════════════ -->
+    <header>
+        <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
+            <div class="navbar__inner">
+
+                <a href="#hero" class="navbar__logo" aria-label="Horizons Travel Home">
+                    ✈ Horizons<span>Travel</span>
+                </a>
+
+                <!-- Desktop links — use fullPage.js anchors -->
+                <ul class="navbar__links" id="fp-nav-links" role="list">
+                    <li><a href="#destinations">Destinations</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#map">Explore Map</a></li>
+                    <li><a href="#stats">Travel Stats</a></li>
+                    <li><a href="#booking">Book Now</a></li>
+                </ul>
+
+                <button class="navbar__hamburger" id="hamburger" aria-label="Toggle mobile menu" aria-expanded="false"
+                    aria-controls="mobile-menu">
+                    <span></span><span></span><span></span>
+                </button>
+
+            </div>
+        </nav>
+
+        <!-- Mobile drawer -->
+        <nav class="navbar__mobile-menu" id="mobile-menu" aria-label="Mobile navigation">
+            <a href="#destinations">Destinations</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#map">Explore Map</a>
+            <a href="#stats">Travel Stats</a>
+            <a href="#booking">Book Now</a>
+        </nav>
+    </header>
+
+
+    <!-- ════════════════════════════════════════════
+       fullPage.js wrapper — each .section becomes
+       a full-viewport scroll snap panel
+  ════════════════════════════════════════════ -->
+    <div id="fullpage">
+
+
+        <!-- ── SECTION 1: HERO — Glide.js Carousel (Library 1) ── -->
+        <div class="section hero" data-anchor="hero" aria-label="Hero carousel">
+
+            <div class="glide" id="hero-glide">
+                <div class="glide__track" data-glide-el="track">
+                    <ul class="glide__slides">
+
+                        <li class="glide__slide hero__slide"
+                            style="background-image:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1600&auto=format&q=80')">
+                            <div class="hero__content">
+                                <p class="hero__tag">Featured Destination</p>
+                                <h1 class="hero__title">Santorini,<br>Greece</h1>
+                                <p class="hero__subtitle">Where volcanic cliffs meet the infinite blue Aegean Sea.</p>
+                                <div class="hero__cta">
+                                    <a href="#destinations" class="btn btn-primary">Explore Packages</a>
+                                    <a href="#gallery" class="btn btn-outline">View Gallery</a>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="glide__slide hero__slide"
+                            style="background-image:url('https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=1600&auto=format&q=80')">
+                            <div class="hero__content">
+                                <p class="hero__tag">Cultural Escape</p>
+                                <h1 class="hero__title">Kyoto,<br>Japan</h1>
+                                <p class="hero__subtitle">Ancient temples, bamboo forests & timeless tradition.</p>
+                                <div class="hero__cta">
+                                    <a href="#destinations" class="btn btn-primary">Explore Packages</a>
+                                    <a href="#map" class="btn btn-outline">See on Map</a>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="glide__slide hero__slide"
+                            style="background-image:url('https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=1600&auto=format&q=80')">
+                            <div class="hero__content">
+                                <p class="hero__tag">Island Paradise</p>
+                                <h1 class="hero__title">The Maldives</h1>
+                                <p class="hero__subtitle">Overwater villas, turquoise lagoons & coral reefs.</p>
+                                <div class="hero__cta">
+                                    <a href="#destinations" class="btn btn-primary">Explore Packages</a>
+                                    <a href="#booking" class="btn btn-outline">Book Now</a>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="glide__slide hero__slide"
+                            style="background-image:url('https://images.unsplash.com/photo-1587595431973-160d0d94add1?w=1600&auto=format&q=80')">
+                            <div class="hero__content">
+                                <p class="hero__tag">Adventure Awaits</p>
+                                <h1 class="hero__title">Machu Picchu,<br>Peru</h1>
+                                <p class="hero__subtitle">Walk the ancient Inca trails high in the Andes Mountains.</p>
+                                <div class="hero__cta">
+                                    <a href="#destinations" class="btn btn-primary">Explore Packages</a>
+                                    <a href="#map" class="btn btn-outline">See on Map</a>
+                                </div>
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+
+                <div class="glide__arrows" data-glide-el="controls">
+                    <button class="glide__arrow glide__arrow--left" data-glide-dir="<"
+                        aria-label="Previous slide">&#8249;</button>
+                    <button class="glide__arrow glide__arrow--right" data-glide-dir=">"
+                        aria-label="Next slide">&#8250;</button>
+                </div>
+
+                <div class="glide__bullets" data-glide-el="controls[nav]">
+                    <button class="glide__bullet" data-glide-dir="=0" aria-label="Go to slide 1"></button>
+                    <button class="glide__bullet" data-glide-dir="=1" aria-label="Go to slide 2"></button>
+                    <button class="glide__bullet" data-glide-dir="=2" aria-label="Go to slide 3"></button>
+                    <button class="glide__bullet" data-glide-dir="=3" aria-label="Go to slide 4"></button>
+                </div>
+            </div>
+
+            <!-- Scroll indicator -->
+            <div class="hero__scroll-hint" aria-hidden="true">
+                <span>Scroll to explore</span>
+                <div class="hero__scroll-arrow">&#8595;</div>
+            </div>
+
+        </div><!-- /hero section -->
+
+
+        <!-- ── SECTION 2: DESTINATIONS — AOS (Library 2) ── -->
+        <div class="section destinations" data-anchor="destinations">
+            <div class="container">
+
+                <div class="text-center" data-aos="fade-up">
+                    <p class="section-label">Handpicked For You</p>
+                    <h2 class="section-title">Top Destinations</h2>
+                    <p class="section-subtitle">Six extraordinary places, each with their own story waiting to be lived.
+                    </p>
+                </div>
+
+                <div class="destinations__grid">
+
+                    <article class="dest-card" data-aos="fade-up" data-aos-delay="0">
+                        <div class="dest-card__img-wrap">
+                            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&auto=format&q=75"
+                                alt="Santorini, Greece" loading="lazy" />
+                            <span class="dest-card__badge">Bestseller</span>
+                        </div>
+                        <div class="dest-card__body">
+                            <p class="dest-card__location">🇬🇷 Greece</p>
+                            <h3 class="dest-card__title">Santorini</h3>
+                            <p class="dest-card__desc">Whitewashed villages clinging to volcanic cliffs above the
+                                shimmering Aegean.</p>
+                            <div class="dest-card__footer">
+                                <div class="dest-card__price">$2,499 <span>/ person</span></div>
+                                <div class="dest-card__rating">★★★★★ 4.9</div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="dest-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="dest-card__img-wrap">
+                            <img src="https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=600&auto=format&q=75"
+                                alt="Kyoto, Japan" loading="lazy" />
+                            <span class="dest-card__badge">Cultural</span>
+                        </div>
+                        <div class="dest-card__body">
+                            <p class="dest-card__location">🇯🇵 Japan</p>
+                            <h3 class="dest-card__title">Kyoto</h3>
+                            <p class="dest-card__desc">Ancient temples, geisha districts and cherry blossom season like
+                                no other on earth.</p>
+                            <div class="dest-card__footer">
+                                <div class="dest-card__price">$3,199 <span>/ person</span></div>
+                                <div class="dest-card__rating">★★★★★ 4.8</div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="dest-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="dest-card__img-wrap">
+                            <img src="https://images.unsplash.com/photo-1533587851505-d119e13fa0d7?w=600&auto=format&q=75"
+                                alt="Amalfi Coast, Italy" loading="lazy" />
+                        </div>
+                        <div class="dest-card__body">
+                            <p class="dest-card__location">🇮🇹 Italy</p>
+                            <h3 class="dest-card__title">Amalfi Coast</h3>
+                            <p class="dest-card__desc">Dramatic cliffs, pastel-coloured villages and the freshest
+                                seafood in the Mediterranean.</p>
+                            <div class="dest-card__footer">
+                                <div class="dest-card__price">$2,799 <span>/ person</span></div>
+                                <div class="dest-card__rating">★★★★ 4.5</div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="dest-card" data-aos="fade-up" data-aos-delay="0">
+                        <div class="dest-card__img-wrap">
+                            <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=600&auto=format&q=75"
+                                alt="Bali, Indonesia" loading="lazy" />
+                            <span class="dest-card__badge">Popular</span>
+                        </div>
+                        <div class="dest-card__body">
+                            <p class="dest-card__location">🇮🇩 Indonesia</p>
+                            <h3 class="dest-card__title">Bali</h3>
+                            <p class="dest-card__desc">Lush rice paddies, sacred temples and world-class surf right
+                                outside your villa door.</p>
+                            <div class="dest-card__footer">
+                                <div class="dest-card__price">$1,899 <span>/ person</span></div>
+                                <div class="dest-card__rating">★★★★★ 4.9</div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="dest-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="dest-card__img-wrap">
+                            <img src="https://images.unsplash.com/photo-1587595431973-160d0d94add1?w=600&auto=format&q=75"
+                                alt="Machu Picchu, Peru" loading="lazy" />
+                            <span class="dest-card__badge">Adventure</span>
+                        </div>
+                        <div class="dest-card__body">
+                            <p class="dest-card__location">🇵🇪 Peru</p>
+                            <h3 class="dest-card__title">Machu Picchu</h3>
+                            <p class="dest-card__desc">Hike to the legendary Inca citadel perched high above the Sacred
+                                Valley.</p>
+                            <div class="dest-card__footer">
+                                <div class="dest-card__price">$2,999 <span>/ person</span></div>
+                                <div class="dest-card__rating">★★★★★ 4.8</div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="dest-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="dest-card__img-wrap">
+                            <img src="https://images.unsplash.com/photo-1573843981267-be1999ff37cd?w=600&auto=format&q=75"
+                                alt="Maldives" loading="lazy" />
+                            <span class="dest-card__badge">Luxury</span>
+                        </div>
+                        <div class="dest-card__body">
+                            <p class="dest-card__location">🇲🇻 Maldives</p>
+                            <h3 class="dest-card__title">The Maldives</h3>
+                            <p class="dest-card__desc">Overwater bungalows, crystalline lagoons and the most vibrant
+                                coral reefs on earth.</p>
+                            <div class="dest-card__footer">
+                                <div class="dest-card__price">$4,499 <span>/ person</span></div>
+                                <div class="dest-card__rating">★★★★★ 5.0</div>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </div><!-- /destinations section -->
+
+
+        <!-- ── SECTION 3: GALLERY — Lightbox2 (Library 3) ── -->
+        <div class="section gallery" data-anchor="gallery">
+            <div class="container">
+
+                <div class="text-center" data-aos="fade-up">
+                    <p class="section-label">Photography</p>
+                    <h2 class="section-title">From Our Travellers</h2>
+                    <p class="section-subtitle">Click any image to open the full-size lightbox gallery.</p>
+                </div>
+
+                <div class="gallery__grid" data-aos="fade-up" data-aos-delay="100">
+
+                    <div class="gallery__item">
+                        <a href="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1400&auto=format"
+                            data-lightbox="horizons-gallery" data-title="Santorini, Greece — sunset from Oia">
+                            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=900&auto=format&q=75"
+                                alt="Santorini sunset" loading="lazy" />
+                            <div class="gallery__overlay"><i>&#128247;</i></div>
+                        </a>
+                    </div>
+
+                    <div class="gallery__item">
+                        <a href="https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=1400&auto=format"
+                            data-lightbox="horizons-gallery" data-title="Kyoto, Japan — Arashiyama bamboo grove">
+                            <img src="https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=600&auto=format&q=75"
+                                alt="Kyoto bamboo grove" loading="lazy" />
+                            <div class="gallery__overlay"><i>&#128247;</i></div>
+                        </a>
+                    </div>
+
+                    <div class="gallery__item">
+                        <a href="https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=1400&auto=format"
+                            data-lightbox="horizons-gallery" data-title="Maldives — overwater bungalows at dawn">
+                            <img src="https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=600&auto=format&q=75"
+                                alt="Maldives overwater bungalows" loading="lazy" />
+                            <div class="gallery__overlay"><i>&#128247;</i></div>
+                        </a>
+                    </div>
+
+                    <div class="gallery__item">
+                        <a href="https://images.unsplash.com/photo-1533587851505-d119e13fa0d7?w=1400&auto=format"
+                            data-lightbox="horizons-gallery" data-title="Amalfi Coast, Italy — Positano village">
+                            <img src="https://images.unsplash.com/photo-1533587851505-d119e13fa0d7?w=600&auto=format&q=75"
+                                alt="Amalfi Coast Positano" loading="lazy" />
+                            <div class="gallery__overlay"><i>&#128247;</i></div>
+                        </a>
+                    </div>
+
+                    <div class="gallery__item">
+                        <a href="https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=1400&auto=format"
+                            data-lightbox="horizons-gallery" data-title="Bali, Indonesia — Tegalalang rice terraces">
+                            <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=600&auto=format&q=75"
+                                alt="Bali rice terraces" loading="lazy" />
+                            <div class="gallery__overlay"><i>&#128247;</i></div>
+                        </a>
+                    </div>
+
+                    <div class="gallery__item">
+                        <a href="https://images.unsplash.com/photo-1587595431973-160d0d94add1?w=1400&auto=format"
+                            data-lightbox="horizons-gallery" data-title="Machu Picchu, Peru — the lost Inca city">
+                            <img src="https://images.unsplash.com/photo-1587595431973-160d0d94add1?w=600&auto=format&q=75"
+                                alt="Machu Picchu Peru" loading="lazy" />
+                            <div class="gallery__overlay"><i>&#128247;</i></div>
+                        </a>
+                    </div>
+
+                    <div class="gallery__item">
+                        <a href="https://images.unsplash.com/photo-1573843981267-be1999ff37cd?w=1400&auto=format"
+                            data-lightbox="horizons-gallery" data-title="Maldives — crystal clear lagoon">
+                            <img src="https://images.unsplash.com/photo-1573843981267-be1999ff37cd?w=600&auto=format&q=75"
+                                alt="Maldives lagoon" loading="lazy" />
+                            <div class="gallery__overlay"><i>&#128247;</i></div>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div><!-- /gallery section -->
+
+
+        <!-- ── SECTION 4: MAP — Leaflet (Library 4) — full-height ── -->
+        <div class="section map-section" data-anchor="map">
+            <div class="container">
+                <div class="map-section__header" data-aos="fade-up">
+                    <p class="section-label">Explore The World</p>
+                    <h2 class="section-title">Interactive Destination Map</h2>
+                    <p class="section-subtitle" style="margin:0 auto;">
+                        Click any marker to discover that destination. Pan &amp; zoom freely.
+                    </p>
+                </div>
+                <div class="map-wrapper" id="map-wrapper" data-aos="zoom-in" data-aos-delay="100">
+                    <div id="travel-map" role="application" aria-label="Interactive travel map"></div>
+                </div>
+            </div>
+        </div><!-- /map section -->
+
+
+        <!-- ── SECTION 5: STATS — Chart.js (Library 5) ── -->
+        <div class="section stats" data-anchor="stats">
+            <div class="container">
+
+                <div class="text-center" data-aos="fade-up">
+                    <p class="section-label">Data &amp; Insights</p>
+                    <h2 class="section-title">Travel Trends</h2>
+                    <p class="section-subtitle" style="color:rgba(255,255,255,0.55);">
+                        Real data to help you plan the perfect trip at the perfect time.
+                    </p>
+                </div>
+
+                <div class="stats__counters" data-aos="fade-up">
+                    <div class="stat-item">
+                        <div class="stat-item__number" data-count="50" data-suffix="+">0+</div>
+                        <div class="stat-item__label">Destinations</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-item__number" data-count="24000" data-suffix="+">0+</div>
+                        <div class="stat-item__label">Happy Travellers</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-item__number" data-count="98" data-suffix="%">0%</div>
+                        <div class="stat-item__label">Satisfaction Rate</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-item__number" data-count="12" data-suffix=" yrs">0 yrs</div>
+                        <div class="stat-item__label">Years of Excellence</div>
+                    </div>
+                </div>
+
+                <div class="stats__grid" data-aos="fade-up" data-aos-delay="100" style="margin-top:2rem;">
+                    <div class="chart-card">
+                        <p class="chart-card__title">Monthly Travel Volume</p>
+                        <canvas id="chart-months" aria-label="Monthly travel volume bar chart" role="img"></canvas>
+                    </div>
+                    <div class="chart-card">
+                        <p class="chart-card__title">Traveller Types</p>
+                        <canvas id="chart-types" aria-label="Traveller types doughnut chart" role="img"></canvas>
+                    </div>
+                </div>
+
+            </div>
+        </div><!-- /stats section -->
+
+
+        <!-- ── SECTION 6: BOOKING ── -->
+        <div class="section booking-section" data-anchor="booking">
+            <section class="booking">
+                <div class="container">
+
+                    <div class="text-center" data-aos="fade-up">
+                        <p class="section-label">Plan Your Trip</p>
+                        <h2 class="section-title">Request a Custom Package</h2>
+                        <p class="section-subtitle">Tell us your dream — our travel specialists will craft the rest.</p>
+                    </div>
+
+                    <div class="booking__card" data-aos="fade-up" data-aos-delay="100">
+                        <form id="booking-form" novalidate aria-label="Travel booking request form">
+                            <div class="form-grid">
+
+                                <div class="form-group">
+                                    <label for="f-name">First Name</label>
+                                    <input type="text" id="f-name" name="first_name" placeholder="Jane" required
+                                        autocomplete="given-name" />
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="f-lastname">Last Name</label>
+                                    <input type="text" id="f-lastname" name="last_name" placeholder="Smith" required
+                                        autocomplete="family-name" />
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="f-email">Email Address</label>
+                                    <input type="email" id="f-email" name="email" placeholder="jane@example.com"
+                                        required autocomplete="email" />
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="f-phone">Phone Number</label>
+                                    <input type="tel" id="f-phone" name="phone" placeholder="+1 (555) 000-0000"
+                                        autocomplete="tel" />
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="f-destination">Destination</label>
+                                    <select id="f-destination" name="destination" required>
+                                        <option value="" disabled selected>Select a destination…</option>
+                                        <option>Santorini, Greece</option>
+                                        <option>Kyoto, Japan</option>
+                                        <option>Amalfi Coast, Italy</option>
+                                        <option>Bali, Indonesia</option>
+                                        <option>Machu Picchu, Peru</option>
+                                        <option>The Maldives</option>
+                                        <option>Other (I'll describe below)</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="f-travellers">Number of Travellers</label>
+                                    <select id="f-travellers" name="travellers">
+                                        <option value="1">1 — Solo</option>
+                                        <option value="2" selected>2 — Couple</option>
+                                        <option value="3-4">3–4 — Small Group</option>
+                                        <option value="5+">5+ — Large Group</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="f-depart">Departure Date</label>
+                                    <input type="date" id="f-depart" name="depart_date" required />
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="f-return">Return Date</label>
+                                    <input type="date" id="f-return" name="return_date" />
+                                </div>
+
+                                <div class="form-group" style="grid-column: 1 / -1;">
+                                    <label for="f-message">Tell Us About Your Dream Trip</label>
+                                    <textarea id="f-message" name="message"
+                                        placeholder="Special requests, preferred accommodation style, activities you love…"></textarea>
+                                </div>
+
+                            </div>
+
+                            <button type="submit" class="btn btn-primary form-submit">
+                                ✈ Send My Request
+                            </button>
+                        </form>
+                    </div>
+
+                </div>
+            </section>
+        </div><!-- /booking section -->
+
+        <!-- ── SECTION 7: FOOTER ── -->
+        <div class="section fp-auto-height footer-section">
+            <footer class="footer" role="contentinfo">
+                <div class="container">
+
+                    <div class="footer__grid">
+                        <div>
+                            <div class="footer__brand-name">✈ Horizons<span>Travel</span></div>
+                            <p class="footer__tagline">
+                                Crafting extraordinary journeys to the world's most magical destinations since 2012.
+                            </p>
+                        </div>
+                        <div>
+                            <p class="footer__heading">Destinations</p>
+                            <ul class="footer__links">
+                                <li><a href="#destinations">Santorini</a></li>
+                                <li><a href="#destinations">Kyoto</a></li>
+                                <li><a href="#destinations">Amalfi Coast</a></li>
+                                <li><a href="#destinations">Bali</a></li>
+                                <li><a href="#destinations">Maldives</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p class="footer__heading">Company</p>
+                            <ul class="footer__links">
+                                <li><a href="#destinations">About Us</a></li>
+                                <li><a href="#booking">Contact</a></li>
+                                <li><a href="#stats">Blog</a></li>
+                                <li><a href="#booking">Careers</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p class="footer__heading">Support</p>
+                            <ul class="footer__links">
+                                <li><a href="#booking">Book a Trip</a></li>
+                                <li><a href="#booking">FAQ</a></li>
+                                <li><a href="#booking">Privacy Policy</a></li>
+                                <li><a href="#booking">Terms of Service</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="footer__bottom">
+                        <p>© 2026 Horizons Travel. All rights reserved.</p>
+                        <div>
+                            <p style="margin-bottom:0.4rem;font-size:0.75rem;color:rgba(255,255,255,0.4);">JavaScript
+                                Libraries Used:</p>
+                            <div class="footer__libs">
+                                <span class="footer__lib-badge">Glide.js v3</span>
+                                <span class="footer__lib-badge">AOS v2</span>
+                                <span class="footer__lib-badge">Leaflet.js v1</span>
+                                <span class="footer__lib-badge">Chart.js v4</span>
+                                <span class="footer__lib-badge">Lightbox2 v2</span>
+                                <span class="footer__lib-badge">fullPage.js v3</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </footer>
+        </div><!-- /footer section -->
+
+    </div><!-- #fullpage -->
+
+
+    <!-- ════════════════════════════════════════════
+       JS LIBRARIES (via CDN — loaded before main.js)
+  ════════════════════════════════════════════ -->
+    <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.6.2/dist/glide.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lightbox2@2.11.4/dist/js/lightbox.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fullpage.js@3.1.2/dist/fullpage.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>
