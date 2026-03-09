@@ -1,0 +1,430 @@
+/* ============================================================
+   UX PERSONA CARD — Style Sheet
+   ============================================================ */
+
+/* ---------- Reset & Base ---------- */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --body-bg: #091124;
+  --navy: #122138;
+  --navy-light: #122138;
+  --orange: #DF9036;
+  --green: #b2d135;
+  --orange-glow: #fbb040;
+  --text-light: #c8cdd4;
+  --text-white: #e8ebef;
+  --font-sans: 'Inter', sans-serif;
+  --font-serif: 'Playfair Display', serif;
+  --font-roboto: 'Roboto', sans-serif;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--body-bg);
+  color: var(--text-light);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem;
+  overflow-x: hidden;
+}
+
+/* ---------- Card Wrapper ---------- */
+.card-wrapper {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* ---------- Persona Card ---------- */
+.persona-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--navy);
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+/* ---------- Photo Column ---------- */
+.card-photo-col {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 480px;
+  overflow: hidden;
+  background: var(--navy-light);
+}
+
+.photo-area {
+  position: absolute;
+  inset: 0;
+}
+
+.persona-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.persona-img.hidden {
+  display: none;
+}
+
+.photo-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  color: rgba(255, 255, 255, 0.25);
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.photo-placeholder:hover {
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.photo-name-block {
+  position: relative;
+  z-index: 2;
+  padding: 1.5rem 1.5rem 2rem;
+  background: linear-gradient(to top, rgba(18, 33, 56, 0.95) 30%, transparent 100%);
+  text-align: center;
+}
+
+.persona-name {
+  font-family: var(--font-roboto);
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1;
+  margin-bottom: 0.8rem;
+  letter-spacing: -0.02em;
+  outline: none;
+}
+
+.persona-quote {
+  font-family: var(--font-roboto);
+  font-size: 1.15rem;
+  font-style: italic;
+  font-weight: 400;
+  color: #fff;
+  line-height: 1.4;
+  outline: none;
+}
+
+/* ---------- Info Column ---------- */
+.card-info-col {
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* so it fills grid height */
+}
+
+/* Section Headings */
+.section-heading {
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: var(--orange);
+  margin-bottom: 1rem;
+}
+
+/* Top Row: About + Demographics */
+.info-top-row {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  align-items: flex-start;
+  padding: 2.5rem 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.about-block {
+  flex: 1;
+}
+
+.about-text {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #fff;
+  font-weight: 400;
+  outline: none;
+}
+
+/* Demographics Table */
+.demo-block {
+  width: 100%;
+}
+
+.demo-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.demo-table tr {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.demo-table td {
+  padding: 0.45rem 0;
+}
+
+.demo-label {
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.9);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.demo-value {
+  text-align: right;
+  color: #fff;
+  font-weight: 400;
+  font-size: 0.95rem;
+  outline: none;
+}
+
+/* Dot Rating */
+.dot-rating {
+  display: inline-flex;
+  gap: 0.25rem;
+}
+
+.dot {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+}
+
+.dot.filled {
+  background: var(--green);
+}
+
+.dot:hover {
+  transform: scale(1.25);
+}
+
+/* Info Grid */
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  padding: 2.5rem 2rem 3rem 2rem;
+  background-color: #091124;
+  flex-grow: 1;
+}
+
+.grid-cell.col-right {
+  grid-column: 1;
+}
+
+/* Bullet Lists */
+.bullet-list {
+  list-style: none;
+  padding: 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #fff;
+  outline: none;
+}
+
+.bullet-list li {
+  position: relative;
+  padding-left: 1.2rem;
+  margin-bottom: 0.8rem;
+}
+
+.bullet-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.45em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--green);
+}
+
+/* Editable highlight */
+[contenteditable="true"]:focus {
+  outline: 1px dashed rgba(178, 209, 53, 0.4);
+  outline-offset: 4px;
+  border-radius: 3px;
+}
+
+/* ============================================================
+   CROP MODAL
+   ============================================================ */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(6px);
+}
+
+.modal-overlay.hidden {
+  display: none;
+}
+
+.modal-content {
+  background: var(--navy-light);
+  border-radius: 12px;
+  padding: 2rem;
+  width: 90%;
+  max-width: 700px;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.6);
+}
+
+.modal-content h2 {
+  font-size: 1.15rem;
+  color: var(--text-white);
+  margin-bottom: 1.2rem;
+}
+
+/* Crop Container */
+.crop-container {
+  position: relative;
+  width: 100%;
+  max-height: 450px;
+  overflow: hidden;
+  border-radius: 6px;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.crop-container img {
+  max-width: 100%;
+  max-height: 450px;
+  display: block;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* Crop Box */
+.crop-box {
+  position: absolute;
+  border: 2px solid var(--orange);
+  background: rgba(178, 209, 53, 0.08);
+  cursor: move;
+  min-width: 50px;
+  min-height: 50px;
+}
+
+.crop-handle {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: var(--orange);
+  border-radius: 2px;
+  z-index: 2;
+}
+
+.crop-handle.top-left     { top: -6px; left: -6px; cursor: nwse-resize; }
+.crop-handle.top-right    { top: -6px; right: -6px; cursor: nesw-resize; }
+.crop-handle.bottom-left  { bottom: -6px; left: -6px; cursor: nesw-resize; }
+.crop-handle.bottom-right { bottom: -6px; right: -6px; cursor: nwse-resize; }
+
+/* Modal Buttons */
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  margin-top: 1.2rem;
+}
+
+.btn-modal {
+  padding: 0.55rem 1.4rem;
+  border: none;
+  border-radius: 6px;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-cancel {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text-light);
+}
+
+.btn-cancel:hover {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.btn-apply {
+  background: var(--orange);
+  color: #fff;
+}
+
+.btn-apply:hover {
+  background: var(--orange-glow);
+}
+
+/* ============================================================
+   RESPONSIVE (Mobile First)
+   ============================================================ */
+@media (min-width: 768px) {
+  .persona-name {
+    font-size: 3.8rem;
+  }
+
+  .info-top-row {
+    flex-direction: row;
+    padding: 3.5rem 3rem 3.2rem 3rem;
+  }
+
+  .demo-block {
+    flex-shrink: 0;
+    width: 240px;
+  }
+
+  .info-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem 5rem;
+    padding: 3.2rem 3rem 3rem 3rem;
+  }
+
+  .grid-cell.col-right {
+    grid-column: 2;
+  }
+}
+
+@media (min-width: 1024px) {
+  .persona-card {
+    display: grid;
+    grid-template-columns: 35.5% 1fr;
+    aspect-ratio: 1600 / 1200;
+  }
+
+  .card-photo-col {
+    height: 100%;
+    min-height: auto;
+  }
+}

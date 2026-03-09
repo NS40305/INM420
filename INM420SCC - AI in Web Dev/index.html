@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="UX Persona Card Builder with Image Cropping">
+    <title>UX Persona Card Builder</title>
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=Playfair+Display:ital,wght@0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- ===== IMAGE CROP MODAL ===== -->
+    <div id="cropModal" class="modal-overlay hidden">
+        <div class="modal-content">
+            <h2>Crop Your Image</h2>
+            <div class="crop-container" id="cropContainer">
+                <img id="cropImage" src="" alt="Image to crop">
+                <div class="crop-box" id="cropBox">
+                    <div class="crop-handle top-left"></div>
+                    <div class="crop-handle top-right"></div>
+                    <div class="crop-handle bottom-left"></div>
+                    <div class="crop-handle bottom-right"></div>
+                </div>
+            </div>
+            <div class="modal-actions">
+                <button id="btnCropCancel" class="btn-modal btn-cancel">Cancel</button>
+                <button id="btnCropApply" class="btn-modal btn-apply">Apply Crop</button>
+            </div>
+        </div>
+    </div>
+
+    <input type="file" id="imageInput" accept="image/*" hidden>
+
+    <!-- ===== PERSONA CARD ===== -->
+    <main class="card-wrapper">
+        <div class="persona-card" id="personaCard">
+
+            <!-- LEFT: Photo Column -->
+            <div class="card-photo-col">
+                <div class="photo-area" id="photoArea">
+                    <img id="personaPhoto" src="public/unnamed.png" alt="Persona photo" class="persona-img">
+                    <div id="photoPlaceholder" class="photo-placeholder" style="display: none;">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5">
+                            <rect x="3" y="3" width="18" height="18" rx="2" />
+                            <circle cx="8.5" cy="8.5" r="1.5" />
+                            <path d="M21 15l-5-5L5 21" />
+                        </svg>
+                        <span>Upload an image</span>
+                    </div>
+                </div>
+                <div class="photo-name-block">
+                    <h2 class="persona-name" contenteditable="true">Sarah</h2>
+                    <p class="persona-quote" contenteditable="true"><em>I want to learn what supports are available for
+                            my parent.</em></p>
+                </div>
+            </div>
+
+            <!-- RIGHT: Info Column -->
+            <div class="card-info-col">
+
+                <!-- Top Row: About + Demographics -->
+                <div class="info-top-row">
+                    <div class="about-block">
+                        <h3 class="section-heading">About</h3>
+                        <p class="about-text" contenteditable="true">I am a writer at a marketing firm. My mother was
+                            recently diagnosed with lung cancer. I would like to help her to navigate the healthcare
+                            system and manage her cancer diagnosis.</p>
+                    </div>
+                    <div class="demo-block">
+                        <table class="demo-table">
+                            <tr>
+                                <td class="demo-label">AGE</td>
+                                <td class="demo-value" contenteditable="true">28</td>
+                            </tr>
+                            <tr>
+                                <td class="demo-label">OCCUPATION</td>
+                                <td class="demo-value" contenteditable="true">Copywriter</td>
+                            </tr>
+                            <tr>
+                                <td class="demo-label">LOCATION</td>
+                                <td class="demo-value" contenteditable="true">Vancouver, BC</td>
+                            </tr>
+                            <tr>
+                                <td class="demo-label">COMPUTER LITERACY</td>
+                                <td class="demo-value">
+                                    <span class="dot-rating" id="dotRating">
+                                        <span class="dot filled" data-value="1"></span>
+                                        <span class="dot filled" data-value="2"></span>
+                                        <span class="dot filled" data-value="3"></span>
+                                        <span class="dot filled" data-value="4"></span>
+                                        <span class="dot filled" data-value="5"></span>
+                                    </span>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Bottom Grid: Tasks / Feelings / Influences / Pain Points / Goals -->
+                <div class="info-grid">
+
+                    <div class="grid-cell">
+                        <h3 class="section-heading">Tasks</h3>
+                        <ul class="bullet-list" contenteditable="true">
+                            <li>I want to learn what supports are available for my parent.</li>
+                            <li>I want to know what advice I can give my parent.</li>
+                        </ul>
+                    </div>
+
+                    <div class="grid-cell">
+                        <h3 class="section-heading">Feelings</h3>
+                        <ul class="bullet-list" contenteditable="true">
+                            <li>Protective.</li>
+                            <li>Powerless due to the "bystander effect".</li>
+                        </ul>
+                    </div>
+
+                    <div class="grid-cell">
+                        <h3 class="section-heading">Influences</h3>
+                        <ul class="bullet-list" contenteditable="true">
+                            <li>My mom who has cancer.</li>
+                            <li>Stigma. I feel like my loved one is being treated as second-class.</li>
+                        </ul>
+                    </div>
+
+                    <div class="grid-cell">
+                        <h3 class="section-heading">Pain Points</h3>
+                        <ul class="bullet-list" contenteditable="true">
+                            <li>Ambiguity around the question of how long my mom will live.</li>
+                            <li>Information overload on the website.</li>
+                        </ul>
+                    </div>
+
+                    <div class="grid-cell col-right">
+                        <h3 class="section-heading">Goals</h3>
+                        <ul class="bullet-list" contenteditable="true">
+                            <li>To learn how long my mom will live.</li>
+                            <li>To protect and support my mom.</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
